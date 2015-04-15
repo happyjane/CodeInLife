@@ -1,0 +1,16 @@
+import html5lib
+import urllib2
+
+url='http://www.airnow.gov/'
+
+def getHtml(url):
+	page = urllib2.urlopen(url)
+	html = page.read()
+	soup=BeautifulSoup(html)
+	f=open('/home/sunying/hello-jane/studyf.txt','w')
+	f.write(html)
+	f.close()
+	page.close()
+        return html
+print getHtml(url)
+
